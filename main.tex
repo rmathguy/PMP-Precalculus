@@ -1,0 +1,318 @@
+%%% template.tex
+%%% This is a template for making up an AMS-LaTeX file
+
+
+%%% The following command chooses the default 10 point type.
+%%% To choose 12 point, change it to
+%%% \documentclass[12pt]{amsart}
+\documentclass{amsart}
+
+%%% The following command loads the amsrefs package, which will be
+%%% used to create the bibliography:
+\usepackage[lite]{amsrefs}
+
+%%% The following command defines the standard names for all of the
+%%% special symbols in the AMSfonts package, listed in
+%%% http://www.ctan.org/tex-archive/info/symbols/math/symbols.pdf
+\usepackage{amssymb}
+
+
+
+%%% The following commands allow you to use \Xy-pic to draw
+%%% commutative diagrams.  (You can omit the second line if you want
+%%% the default style of the nodes to be \textstyle.)
+\usepackage[all,cmtip]{xy}
+\let\objectstyle=\displaystyle
+
+%%% If you'll be importing any graphics, uncomment the following
+%%% line.  (Note: The spelling is correct; the package graphicx.sty is
+%%% the updated version of the older graphics.sty.)
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18, width=10cm}
+\graphicspath{ {./images/} }
+
+\usepackage[parfill]{parskip}
+
+\usepackage{tcolorbox}
+
+\usepackage{dirtytalk}
+
+\usepackage{multirow}
+
+\usepackage{float}
+
+\usepackage{mathptmx}
+\usepackage[11pt]{moresize}
+
+\usepackage{etoolbox}
+\apptocmd{\lim}{\limits}{}{}
+
+\tcbuselibrary{theorems}
+
+\newtcbtheorem[number within=section]{thm}{Theorem}%
+{colback=white!5,colframe=green!35!blue,fonttitle=\bfseries}{th}
+
+\usepackage{kantlipsum} % for text filler
+
+\usepackage[belowskip=-1pt,aboveskip=0pt]{caption}
+
+\setlength{\intextsep}{10pt plus 2pt minus 2pt}
+
+\setlength{\textwidth}{\paperwidth}
+
+\addtolength{\textwidth}{-2in}
+\calclayout
+
+
+
+%%% This part of the file (after the \documentclass command,
+%%% but before the \begin{document}) is called the ``preamble''.
+%%% This is where we put our macro definitions.
+
+%%% Comment out (or delete) any of these that you don't want to use.
+
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+
+%%%-------------------------------------------------------------------
+%%%-------------------------------------------------------------------
+%%% The Theorem environments:% '{~{~{
+%%%
+%%%
+%%% The following commands set it up so that:
+%%% 
+%%% All Theorems, Corollaries, Lemmas, Propositions, Definitions,
+%%% Remarks, Examples, Notations, and Terminologies  will be numbered
+%%% in a single sequence, and the numbering will be within each
+%%% section.  Displayed equations will be numbered in the same
+%%% sequence. 
+%%% 
+%%% 
+%%% Theorems, Propositions, Lemmas, and Corollaries will have the most
+%%% formal typesetting.
+%%% 
+%%% Definitions will have the next level of formality.
+%%% 
+%%% Remarks, Examples, Notations, and Terminologies will be the least
+%%% formal.
+%%% 
+%%% Theorem:
+%%%% \begin{thm}
+%%% 
+%%% \end{thm}
+%%% 
+%%% Corollary:
+%%% \begin{cor}
+%%% 
+%%% \end{cor}
+%%% 
+%%% Lemma:
+%%% \begin{lem}
+%%% 
+%%% \end{lem}
+%%% 
+%%% Proposition:
+%%% \begin{prop}
+%%% 
+%%% \end{prop}
+%%% 
+%%% Definition:
+%%% \begin{defn}
+%%% 
+%%% \end{defn}
+%%% 
+%%% Remark:
+%%% \begin{rem}
+%%% 
+%%% \end{rem}
+%%% 
+%%% Example:
+%%% \begin{ex}
+%%% 
+%%% \end{ex}
+%%% 
+%%% Notation:
+%%% \begin{notation}
+%%% 
+%%% \end{notation}
+%%% 
+%%% Terminology:
+%%% \begin{terminology}
+%%% 
+%%% \end{terminology}
+%%% 
+%%%       Theorem environments% }~}~}'
+
+% The following causes equations to be numbered within sections
+\numberwithin{equation}{section}
+
+
+\theoremstyle{plain} %% This is the default, anyway
+
+\newtheorem{cor}[equation]{Corollary}
+\newtheorem{lem}[equation]{Lemma}
+\newtheorem{prop}[equation]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{defn}[equation]{Definition}
+
+\theoremstyle{remark}
+\newtheorem{rem}[equation]{Remark}
+\newtheorem{ex}[equation]{Example}
+\newtheorem{notation}[equation]{Notation}
+\newtheorem{terminology}[equation]{Terminology}
+
+
+%%%-------------------------------------------------------------------
+\begin{document}
+
+%%% In the title, use a double backslash "\\" to show a linebreak:
+%%% Use one of the following two forms:
+%%% \title{Text of the title}
+%%% or
+%%% \title[Short form for the running head]{Text of the title}
+\title{Pre-calculus}
+
+
+%%% If there are multiple authors, they're described one at a time:
+%%% First author: \author{} \address{} \curraddr{} \email{} \thanks{}
+%%% Second author: \author{} \address{} \curraddr{} \email{} \thanks{}
+%%% Third author: \author{} \address{} \curraddr{} \email{} \thanks{}
+\author{Prison Math Project}
+\date{}
+
+
+\maketitle
+
+\textbf{\textit{A Note to the Reader}}% '{~{~{
+
+Hello! What follows is a sequence of modules \footnote{A \textit{module} is a self-contained collection of materials that are organized so that a student can learn a subject without the aid of an instructor.
+By self-contained, we mean that the student do  not need supplementary resources to aid in their studies. However, if you have an extra pre-calculus book on hand, you certainly are not discouraged from using it 
+for extra practice.} intended to support you in learning Pre-Calculus. Pre-Calculus is typically a review and supplimentary course before the Calculus courses. It is a large review of Algebra, including the study
+of functions, graphs and their properties. Especially polynomials and trigonometric funcitons which feature a prominent role in Calculus. (If these words are unfamiliar don't be scared we'll cover them in time in more
+detail)
+
+The Prison Math Project (PMP) realizes that you may be practicing mathematics in an environment that is highly restrictive. In response, this text is designed to be used independently, without an instructor, 
+and also \textit{does not require a calculator}. Once you complete this module on Fundamentals of Real Numbers, you are free to move onto the next module topic: Exponents and Radicals. Exponents and Radicals are
+ways in which we express the ideas of repeated multiplication and the un-doing of that such as the square-root. But before we jump too far ahead, let us work and (re)learn the properties of Real Numbers.% }~}~}'
+
+%======================
+%	TODO
+% Author: rmathguy
+% 03-17-23 (M-D-Y)
+% Modify the how to section to fit with the pre-calculus course:
+
+\textit{How to learn with this set of modules.}% '{~{~{
+
+ Arguably, the best way to learn mathematics is to solve problems. Throughout the text you will find loads of problems. There are three types: \textbf{\textit{Progress Check Problems}}, problems found at the end of a section which we will plainly call \textbf{\textit{Problems}}, and then more challenging problems found at the end of sections which we call \textbf{\textit{Challenge Problems}}. Our recommendation is that you make valiant efforts to solve all the problems you run across. 
+ 
+ - \textbf{\textit{Progress Check Problems}} are spread throughout sections. They are meant help guide your thinking as you read through the text. They also serve as a gauge to help you determine how well you are understanding what you are reading. Reading a math text is a lot different than reading ordinary books. Problems need to be solved throughout. At the end of each progress check problem, you will find its solution. It is strongly encouraged that you make efforts to solve each problems before looking at its corresponding solution.
+
+-  \textbf{\textit{Problems}} at the end of each section solidify your understanding of all topics that were discussed in the section. It is recommended that you solve (or at least understand each solution) each problem before moving on to the next section. Solutions to \textbf{\textit{Problems}} are found at the end of the module. Try your best not to reference the solution until you have given honest efforts in solving the problem! This cannot be stressed enough. Referencing the solution before you have given yourself time to think through a problem will take away your opportunity to truly learn the material. If you get stuck on a problem, go back and re-read the section or work through examples carefully. Getting stuck is part of the learning process! All mathematicians get stuck at some point in their career. We also recommend that if you do get stuck, write down the problem you are having difficulties with and write a letter to PMP. We will respond as quickly as we can and can even match you up with a Mentor so that you have someone to work through the problems with. We are here to help! The beautiful part of doing mathematics is that you never have to do it completely alone.
+
+
+
+- \textbf{\textit{Challenge Problems}} are harder than \textbf{\textit{Problems}}, generally. These problems will require more time and thought. They are not required to be solved in their entirety before moving on to the next module; however, it is strongly recommended to understand their solutions. You will develop helpful problem solving techniques and tricks if you can understand the challenge problems' solutions. Besides, if you can find success in solving the challenge problems, the normal problems may come easier.
+
+- \textbf{\textit{Reflection Prompts}} are not problems in the traditional sense, but they are embedded throughout modules to give you space to reflect on your experience in interacting with the content. In this space you can make suggestions to PMP about how to make the module work better for you.
+
+- \textbf{\textit{Appendix}}
+
+The appendix is found at the end of this module. The appendix consists of a collection of example problems and their fully explained solutions that focus on the following prerequisite topics:
+functions, solving various equations, factoring, etc. 
+% }~}~}'
+
+\vspace{0.3cm}
+
+That's it! You're ready to begin your journey of learning pre-calculus and join a long history of mathematicians and scientists who studied this beautiful subject. 
+Pre-Calculus by it's nature is a review and is a modern interpretation of what is needed to move on to Calculus. It's a collection of ideas from Algebra and Trigonometry among other areas of Math. One of the most
+interesting parts of Pre-Calculus is the study of the solutions to polynomial equations along with the development of \emph{Coordinate Geometry} as a tool for working with algebra and geometry simultaneously!
+
+This allows tools from one to be used in the other. Quite a neat trick!
+
+\newpage
+
+
+\textit{From the author, R.S.:}% '{~{~{
+
+\textit{\small Math has always been the safe-haven of my mind. It has always given me something to do when I'm bored out of my mind, wherever that may be. It will be hard at times and that's alright, that's normal, and it's a part of the process. I hope you cand find the beauty I did. Good Luck} % }~}~}'
+
+
+
+
+\newpage
+
+%%% To include a table of contents, uncomment the following line:
+
+\tableofcontents
+
+%%%-------------------------------------------------------------------
+%%%-------------------------------------------------------------------
+%%% Start the body of the paper here!  E.G., maybe use:
+
+
+
+
+\newpage
+
+\section{\textbf{Real Numbers}}
+%======================
+%	TODO
+% Author: rmathguy
+% 03-17-23 (M-D-Y)
+% Write about the real numbers and their properties assuming the reader
+% has knowledge of arithmetic up to fractions. But maybe not experience with exponents.
+
+% '{~{~{ Biliography
+%%% -------------------------------------------------------------------
+%%% -------------------------------------------------------------------
+%%% This is where we create the bibliography.
+
+%%%%\begin{bibdiv}
+ %%%% \begin{biblist}
+
+%%% The format of bibliography items is as in the following examples:
+%%% 
+%%% \bib{yellowmonster}{book}{
+%%%   author={Bousfield, A.K.},
+%%%   author={Kan, D.M.},
+%%%   title={Homotopy Limits, Completions and Localizations},
+%%%   date={1972},
+%%%   series={Lecture Notes in Mathematics},
+%%%   volume={304},
+%%%   publisher={Springer-Verlag},
+%%%   address={Berlin-New York}
+%%% }
+
+%%% \bib{HA}{book}{
+%%%   author={Quillen, Daniel G.},
+%%%   title={Homotopical Algebra},
+%%%   series={Lecture Notes in Mathematics},
+%%%   volume={43},
+%%%   publisher={Springer-Verlag},
+%%%   address={Berlin-New York},
+%%%   date={1967}
+%%% }
+
+%%% \bib{serre:shfs}{article}{
+%%%   author={Serre, Jean-Pierre},
+%%%   title={Homologie Singuli\`ere des Espaces Fibr\'es.  Applications},
+%%%   journal={Ann. of Math. (2)},
+%%%   date={1951},
+%%%   volume={54},
+%%%   pages={425--505}
+%%% }
+
+
+
+
+
+%%%%  \end{biblist}
+%%%%  \end{bibdiv}
+% }~}~}'
+
+\end{document}
